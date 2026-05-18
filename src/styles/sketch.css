@@ -1,0 +1,236 @@
+/* ==========================================================
+   SKETCH.CSS — Estado "lápiz / wireframe"
+   Aplica cuando el ancestro tiene .scene__layer--sketch
+   ========================================================== */
+
+/* ── Mixin: grid paper background ────────────────────────── */
+.scene__layer--sketch .hero,
+.scene__layer--sketch .section {
+  background-color: var(--clr-sketch-bg);
+  background-image:
+    linear-gradient(var(--clr-sketch-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--clr-sketch-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Grid BG overlay (hero) ───────────────────────────────── */
+.scene__layer--sketch .hero__grid-bg {
+  opacity: 1;
+  background-image:
+    linear-gradient(var(--clr-sketch-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--clr-sketch-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   HERO — sketch
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--sketch .hero__eyebrow {
+  font-family: var(--font-sketch);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-sketch-muted);
+  border: 1.5px dashed var(--clr-sketch-line);
+  border-radius: 3px;
+  padding: 0.2em 0.65em;
+  width: fit-content;
+  letter-spacing: 0.12em;
+}
+
+.scene__layer--sketch .hero__title {
+  font-family: var(--font-sketch);
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  font-weight: 700;
+  color: var(--clr-sketch-fg);
+}
+
+.scene__layer--sketch .hero__underline-path {
+  stroke: var(--clr-sketch-muted);
+  stroke-width: 2.5;
+  stroke-dasharray: 5 3;
+}
+
+.scene__layer--sketch .hero__sub {
+  font-family: var(--font-sketch);
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  color: var(--clr-sketch-fg);
+  opacity: 0.85;
+}
+
+.scene__layer--sketch .btn--primary {
+  font-family: var(--font-sketch);
+  font-size: 1.05rem;
+  color: var(--clr-sketch-fg);
+  background: transparent;
+  border-color: var(--clr-sketch-line);
+  border-style: dashed;
+}
+
+.scene__layer--sketch .btn--ghost {
+  font-family: var(--font-sketch);
+  font-size: 1.05rem;
+  color: var(--clr-sketch-muted);
+  background: transparent;
+  border-color: var(--clr-sketch-line);
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+/* Visual hero sketch */
+.scene__layer--sketch .hero__wireframe-wrap { display: block; }
+.scene__layer--sketch .hero__image-wrap     { display: none; }
+.scene__layer--sketch .hero__annotations    { display: flex; }
+
+/* ════════════════════════════════════════════════════════════
+   SECCIONES — cabecera sketch
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--sketch .section__label {
+  font-family: var(--font-mono);
+  color: var(--clr-sketch-line);
+}
+
+.scene__layer--sketch .section__title {
+  font-family: var(--font-sketch);
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--clr-sketch-fg);
+}
+
+.scene__layer--sketch .section__sub {
+  font-family: var(--font-sketch);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--clr-sketch-fg);
+  opacity: 0.85;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SERVICIOS — Cards sketch
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--sketch .card {
+  border: 2px dashed var(--clr-sketch-line);
+  background: transparent;
+}
+
+.scene__layer--sketch .card__icon-wrap {
+  border: 1.5px dashed var(--clr-sketch-line);
+  background: transparent;
+}
+
+.scene__layer--sketch .card__icon {
+  stroke: var(--clr-sketch-muted);
+}
+
+.scene__layer--sketch .card__num {
+  color: var(--clr-sketch-line);
+  opacity: 1;
+}
+
+.scene__layer--sketch .card__title {
+  font-family: var(--font-sketch);
+  font-size: 1.25rem;
+  color: var(--clr-sketch-fg);
+}
+
+.scene__layer--sketch .card__desc {
+  font-family: var(--font-sketch);
+  font-size: 1.05rem;
+  color: var(--clr-sketch-fg);
+  opacity: 0.8;
+}
+
+.scene__layer--sketch .card__cta {
+  font-family: var(--font-sketch);
+  font-size: 1rem;
+  color: var(--clr-sketch-muted);
+}
+
+/* ════════════════════════════════════════════════════════════
+   PROCESO — Timeline sketch
+   ════════════════════════════════════════════════════════════ */
+
+/* Línea conectora: discontinua */
+.scene__layer--sketch .timeline::before {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--clr-sketch-line) 0,
+    var(--clr-sketch-line) 7px,
+    transparent 7px,
+    transparent 14px
+  );
+  background-color: transparent;
+}
+
+/* Nodos: vacíos con borde discontinuo */
+.scene__layer--sketch .timeline__node {
+  background: var(--clr-sketch-bg);
+  border: 2px dashed var(--clr-sketch-line);
+}
+
+.scene__layer--sketch .timeline__num {
+  color: var(--clr-sketch-muted);
+}
+
+.scene__layer--sketch .timeline__title {
+  font-family: var(--font-sketch);
+  font-size: 1.15rem;
+  color: var(--clr-sketch-fg);
+}
+
+.scene__layer--sketch .timeline__desc {
+  font-family: var(--font-sketch);
+  font-size: 1rem;
+  color: var(--clr-sketch-fg);
+  opacity: 0.8;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CONTACTO — Form sketch
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--sketch .contacto__link-val,
+.scene__layer--sketch .contacto__response .contacto__link-val {
+  font-family: var(--font-sketch);
+  font-size: 1.05rem;
+  color: var(--clr-sketch-fg);
+}
+
+.scene__layer--sketch .contacto__response {
+  border-top-color: var(--clr-sketch-line);
+  border-top-style: dashed;
+}
+
+.scene__layer--sketch .contacto__sketch-note {
+  display: flex;
+}
+
+.scene__layer--sketch .contacto__arrow-svg {
+  stroke: var(--clr-sketch-line);
+}
+
+.scene__layer--sketch .form__label {
+  font-family: var(--font-sketch);
+  font-size: 1rem;
+  color: var(--clr-sketch-fg);
+  font-weight: 600;
+}
+
+.scene__layer--sketch .form__input {
+  border-color: var(--clr-sketch-line);
+  border-style: dashed;
+  color: var(--clr-sketch-fg);
+  font-family: var(--font-sketch);
+  font-size: 1rem;
+}
+
+.scene__layer--sketch .form__input::placeholder {
+  color: var(--clr-sketch-line);
+  font-family: var(--font-sketch);
+}
+
+.scene__layer--sketch .btn--send {
+  font-family: var(--font-sketch);
+  font-size: 1.05rem;
+  color: var(--clr-sketch-fg);
+  background: transparent;
+  border-color: var(--clr-sketch-line);
+  border-style: dashed;
+}

@@ -1,0 +1,260 @@
+/* ==========================================================
+   FINAL.CSS — Estado "vivo / terminado"
+   Aplica cuando el ancestro tiene .scene__layer--final
+   ========================================================== */
+
+/* ════════════════════════════════════════════════════════════
+   HERO — final
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--final .hero {
+  background-color: var(--clr-cream);
+}
+
+.scene__layer--final .hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  letter-spacing: 0.18em;
+}
+
+.scene__layer--final .hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  font-weight: 700;
+  color: var(--clr-ink);
+}
+
+.scene__layer--final .hero__underline-path {
+  stroke: var(--clr-accent);
+  stroke-width: 3.5;
+  opacity: 0.85;
+}
+
+.scene__layer--final .hero__sub {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: #5A5550;
+  line-height: 1.7;
+}
+
+.scene__layer--final .btn--primary {
+  font-family: var(--font-body);
+  background: var(--clr-ink);
+  color: #fff;
+  border-color: var(--clr-ink);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+}
+
+.scene__layer--final .btn--primary:hover {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 99, 74, 0.35);
+}
+
+.scene__layer--final .btn--ghost {
+  font-family: var(--font-body);
+  background: transparent;
+  color: var(--clr-ink);
+  border-color: var(--clr-ink);
+}
+
+.scene__layer--final .btn--ghost:hover {
+  background: var(--clr-ink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Visual hero final */
+.scene__layer--final .hero__wireframe-wrap { display: none; }
+.scene__layer--final .hero__image-wrap     { display: block; position: relative; }
+.scene__layer--final .hero__annotations    { display: none; }
+
+/* ════════════════════════════════════════════════════════════
+   SECCIONES — cabecera final
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--final .section__label {
+  color: var(--clr-accent);
+}
+
+.scene__layer--final .section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 3.5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--clr-ink);
+}
+
+.scene__layer--final .section__sub {
+  font-family: var(--font-body);
+  color: #5A5550;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SERVICIOS — Cards final
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--final .section--servicios {
+  background-color: #fff;
+}
+
+.scene__layer--final .card {
+  background: var(--clr-cream);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+  transition:
+    transform  0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out);
+}
+
+.scene__layer--final .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.scene__layer--final .card__icon-wrap {
+  background: rgba(212, 99, 74, 0.1);
+}
+
+.scene__layer--final .card__icon {
+  stroke: var(--clr-accent);
+}
+
+.scene__layer--final .card__num {
+  color: var(--clr-accent);
+  opacity: 1;
+}
+
+.scene__layer--final .card__title {
+  font-family: var(--font-display);
+  color: var(--clr-ink);
+}
+
+.scene__layer--final .card__desc {
+  font-family: var(--font-body);
+  color: #5A5550;
+}
+
+.scene__layer--final .card__cta {
+  font-family: var(--font-body);
+  color: var(--clr-accent);
+}
+
+.scene__layer--final .card__cta:hover {
+  text-decoration: underline;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PROCESO — Timeline final
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--final .section--proceso {
+  background-color: var(--clr-cream);
+}
+
+/* Línea conectora: gradiente sólido */
+.scene__layer--final .timeline::before {
+  background: linear-gradient(
+    90deg,
+    var(--clr-accent) 0%,
+    var(--clr-ink)    100%
+  );
+}
+
+/* Nodos: rellenos con tinta */
+.scene__layer--final .timeline__node {
+  background: var(--clr-ink);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.scene__layer--final .timeline__num {
+  color: #fff;
+}
+
+.scene__layer--final .timeline__title {
+  font-family: var(--font-display);
+  color: var(--clr-ink);
+}
+
+.scene__layer--final .timeline__desc {
+  font-family: var(--font-body);
+  color: #5A5550;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CONTACTO — Sección oscura (fondo ink)
+   ════════════════════════════════════════════════════════════ */
+.scene__layer--final .section--contacto {
+  background-color: var(--clr-ink);
+}
+
+/* Override: section title/sub sobre fondo oscuro */
+.scene__layer--final .section--contacto .section__title {
+  color: #fff;
+}
+
+.scene__layer--final .section--contacto .section__sub {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.scene__layer--final .section--contacto .section__label {
+  color: var(--clr-accent);
+}
+
+/* Info de contacto */
+.scene__layer--final .contacto__link-val {
+  font-family: var(--font-body);
+  color: #fff;
+}
+
+.scene__layer--final .contacto__response {
+  border-top-color: rgba(255, 255, 255, 0.12);
+  border-top-style: solid;
+}
+
+.scene__layer--final .contacto__link:hover .contacto__link-val {
+  color: var(--clr-accent);
+}
+
+/* Anotación sketch: oculta en final */
+.scene__layer--final .contacto__sketch-note { display: none; }
+
+/* Form labels e inputs */
+.scene__layer--final .form__label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.scene__layer--final .form__input {
+  border-color: rgba(255, 255, 255, 0.15);
+  border-style: solid;
+  color: #fff;
+  font-family: var(--font-body);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.scene__layer--final .form__input:focus {
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 3px rgba(212, 99, 74, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.scene__layer--final .form__input::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+  font-family: var(--font-body);
+}
+
+/* Botón enviar */
+.scene__layer--final .btn--send {
+  font-family: var(--font-body);
+  background: var(--clr-accent);
+  color: #fff;
+  border-color: var(--clr-accent);
+  box-shadow: 0 4px 16px rgba(212, 99, 74, 0.3);
+}
+
+.scene__layer--final .btn--send:hover {
+  background: #bf5540;
+  border-color: #bf5540;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(212, 99, 74, 0.45);
+}
