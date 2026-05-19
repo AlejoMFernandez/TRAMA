@@ -149,8 +149,11 @@ svg { display: block; }
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: calc(var(--nav-h) + var(--hero-pad-y)) var(--hero-pad-x) var(--hero-pad-y);
+  justify-content: flex-start;
+  padding:
+    calc(var(--nav-h) + clamp(1.25rem, 3.5vh, 2.5rem))
+    var(--hero-pad-x)
+    var(--hero-pad-y);
   position: relative;
   overflow: hidden;
 }
@@ -247,7 +250,11 @@ svg { display: block; }
 /* ── Hero Visual ──────────────────────────────────────────── */
 .hero__visual {
   position: relative;
-  aspect-ratio: 3 / 4;
+  /* Aspect-ratio que matchea la viewBox del corte SVG (320×280) para
+     que el dibujo arquitectónico ocupe el contenedor sin letterbox.
+     En la capa final, la foto se recorta con object-fit: cover */
+  aspect-ratio: 320 / 280;
+  max-height: 62vh; /* Cap para evitar que el visual empuje el contenido */
 }
 
 .hero__wireframe-wrap {

@@ -67,11 +67,11 @@ export function heroHTML() {
         <div class="hero__image-frame">
           <img
             class="hero__image"
-            src="https://picsum.photos/seed/casa-rd04/600/800"
+            src="https://picsum.photos/seed/casa-rd04/800/700"
             alt="Casa RD-04 — vivienda unifamiliar diseñada por TRAMA Estudio"
             loading="lazy"
-            width="600"
-            height="800"
+            width="800"
+            height="700"
           />
         </div>
         <div class="hero__image-accent" aria-hidden="true"></div>
