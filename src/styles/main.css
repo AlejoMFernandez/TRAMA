@@ -151,7 +151,7 @@ svg { display: block; }
   flex-direction: column;
   justify-content: flex-start;
   padding:
-    calc(var(--nav-h) + clamp(1.25rem, 3.5vh, 2.5rem))
+    calc(var(--nav-h) + clamp(2rem, 5.5vh, 4rem))
     var(--hero-pad-x)
     var(--hero-pad-y);
   position: relative;
@@ -586,14 +586,31 @@ svg { display: block; }
 }
 
 @media (max-width: 768px) {
-  .hero__container { grid-template-columns: 1fr; gap: 2.5rem; }
+  :root {
+    --hero-pad-x:    1.5rem;
+    --section-pad-y: 4.5rem;
+  }
+
+  .hero {
+    /* Mobile: contenido respira pero no se va de la viewport */
+    padding: calc(var(--nav-h) + 1.75rem) var(--hero-pad-x) 3rem;
+  }
+
+  .hero__container { grid-template-columns: 1fr; gap: 2rem; }
 
   .hero__visual {
-    aspect-ratio: 4 / 3;
-    max-width: 420px;
+    aspect-ratio: 320 / 280;
+    max-width: 100%;
+    max-height: none;
     margin: 0 auto;
     width: 100%;
   }
+
+  /* Hero typography: títulos más medidos en mobile */
+  .hero__title { font-size: clamp(2rem, 8vw, 2.75rem) !important; }
+  .hero__sub   { font-size: 1rem; }
+
+  .section__title { font-size: clamp(1.7rem, 6vw, 2.2rem); }
 
   .timeline { grid-template-columns: 1fr; gap: 2.5rem; }
   .timeline::before { display: none; }
@@ -606,12 +623,25 @@ svg { display: block; }
   }
 
   .timeline__body { margin-top: 0; }
-  .contacto__grid { grid-template-columns: 1fr; }
-  .site-nav { display: none; }
+  .contacto__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Nav mobile: dejamos solo el CTA "Contacto" visible.
+     Los links de sección los reemplaza el scroll natural. */
+  .site-nav__link:not(.site-nav__link--cta) { display: none; }
+  .site-nav { gap: 0; }
+
+  /* Card hover no aplica en touch — bajamos un poco la sombra */
+  .scene__layer--final .card { box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
 }
 
 @media (max-width: 500px) {
   .form__row--2col { grid-template-columns: 1fr; }
+
+  .hero__cta { gap: 0.75rem; width: 100%; }
+  .hero__cta .btn { flex: 1; justify-content: center; padding: 0.75rem 1rem; }
+
+  /* Hero annotations: pueden romper en pantallas muy chicas */
+  .hero__annotations { display: none !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════
