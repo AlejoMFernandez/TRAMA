@@ -65,14 +65,18 @@ export function heroHTML() {
       <!-- FINAL: foto de obra real + bloque accent -->
       <div class="hero__image-wrap">
         <div class="hero__image-frame">
-          <img
-            class="hero__image"
-            src="https://picsum.photos/seed/casa-rd04/800/700"
-            alt="Casa RD-04 — vivienda unifamiliar diseñada por TRAMA Estudio"
-            loading="lazy"
-            width="800"
-            height="700"
-          />
+          <picture>
+            <source srcset="/casa-rd04.webp" type="image/webp">
+            <img
+              class="hero__image"
+              src="/casa-rd04.jpg"
+              alt="Casa RD-04 — vivienda unifamiliar diseñada por TRAMA Estudio"
+              loading="eager"
+              fetchpriority="high"
+              width="1341"
+              height="1173"
+            />
+          </picture>
         </div>
         <div class="hero__image-accent" aria-hidden="true"></div>
       </div>
