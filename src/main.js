@@ -6,8 +6,11 @@ import { heroHTML }      from './components/Hero.js'
 import { serviciosHTML } from './components/Servicios.js'
 import { procesoHTML }   from './components/Proceso.js'
 import { contactoHTML }  from './components/Contacto.js'
-import { initLenis }     from './utils/lenis.js'
+import { initLenis }            from './utils/lenis.js'
+import { initBlurUp }           from './utils/blurUp.js'
+import { initCustomCursor }     from './utils/cursor.js'
 import { initScrollAnimations } from './animations/scrollAnimations.js'
+import { initDrawSketch }       from './animations/drawSketch.js'
 
 /* ── Construir escenas ────────────────────────────────────── */
 function scene(id, html) {
@@ -25,6 +28,9 @@ document.getElementById('app').innerHTML = [
   scene('contacto',  contactoHTML()),
 ].join('\n')
 
-/* ── Init smooth scroll + animaciones ────────────────────── */
+/* ── Init smooth scroll + animaciones + UX details ────────── */
 initLenis()
+initBlurUp()
 initScrollAnimations()
+initDrawSketch()
+initCustomCursor()

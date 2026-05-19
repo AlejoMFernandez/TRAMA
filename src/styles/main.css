@@ -606,3 +606,80 @@ svg { display: block; }
 @media (max-width: 500px) {
   .form__row--2col { grid-template-columns: 1fr; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   FASE 4 — Detalles UX: cursor lápiz + blur-up de imágenes
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Custom cursor: lápiz que sigue al mouse sobre sketch ── */
+.pencil-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.18s var(--ease-out);
+  /* GSAP maneja x/y, así que evitamos transform-origin issues */
+  will-change: transform, opacity;
+}
+
+.pencil-cursor.is-visible { opacity: 1; }
+
+.pencil-cursor svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.18));
+}
+
+/* Ocultamos el cursor nativo solo sobre la capa sketch.
+   Elementos interactivos restablecen sus cursores estándar. */
+.scene__layer--sketch,
+.scene__layer--sketch * {
+  cursor: none;
+}
+
+.scene__layer--sketch a,
+.scene__layer--sketch button,
+.scene__layer--sketch .btn,
+.scene__layer--sketch label {
+  cursor: pointer;
+}
+
+.scene__layer--sketch input,
+.scene__layer--sketch textarea {
+  cursor: text;
+}
+
+/* Touch / reduced motion: no usamos el cursor custom */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .pencil-cursor { display: none; }
+  .scene__layer--sketch,
+  .scene__layer--sketch * { cursor: auto; }
+}
+
+/* ── Blur-up: imagen entra borrosa y se enfoca al cargar ── */
+.hero__image {
+  transition:
+    filter    0.9s var(--ease-out),
+    opacity   0.6s var(--ease-out),
+    transform 1.1s var(--ease-out);
+}
+
+.hero__image.is-loading {
+  filter: blur(22px);
+  opacity: 0.7;
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__image,
+  .hero__image.is-loading {
+    transition: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+}
