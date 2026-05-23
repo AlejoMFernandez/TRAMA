@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320">
+  <style>
+    .label-name {
+      font-family: 'Clash Display', 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .label-hex {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+    .label-role {
+      font-family: 'Satoshi', 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="320" fill="#FAFAFA"/>
+
+  <!-- Title -->
+  <text x="40" y="44"
+    font-family="Clash Display, Inter, system-ui, sans-serif"
+    font-weight="700" font-size="22" fill="#1A1A1A"
+  >TRAMA — Paleta de marca</text>
+
+  <!-- Cream swatch -->
+  <rect x="40"  y="80" width="200" height="200" fill="#F5F1EA" stroke="#E5E1DA"/>
+  <text x="60"  y="100" class="label-role" fill="#999">FONDO</text>
+  <text x="60"  y="240" class="label-name" fill="#1A1A1A">Crema</text>
+  <text x="60"  y="262" class="label-hex"  fill="#6B6B6B">#F5F1EA</text>
+
+  <!-- Ink swatch -->
+  <rect x="260" y="80" width="200" height="200" fill="#1A1A1A"/>
+  <text x="280" y="100" class="label-role" fill="#888">TEXTO / TINTA</text>
+  <text x="280" y="240" class="label-name" fill="#F5F1EA">Tinta</text>
+  <text x="280" y="262" class="label-hex"  fill="#999">#1A1A1A</text>
+
+  <!-- Accent swatch -->
+  <rect x="480" y="80" width="200" height="200" fill="#D4634A"/>
+  <text x="500" y="100" class="label-role" fill="#fff" opacity="0.7">ACENTO</text>
+  <text x="500" y="240" class="label-name" fill="#F5F1EA">Terracota</text>
+  <text x="500" y="262" class="label-hex"  fill="#F5F1EA">#D4634A</text>
+
+  <!-- Sketch gray swatch (smaller, secondary) -->
+  <rect x="700" y="80"  width="160" height="95" fill="#6B6B6B"/>
+  <text x="720" y="100" class="label-role" fill="#fff" opacity="0.6">SECUNDARIO</text>
+  <text x="720" y="150" class="label-name" fill="#F5F1EA">Lápiz</text>
+  <text x="720" y="168" class="label-hex"  fill="#F5F1EA" opacity="0.8">#6B6B6B</text>
+
+  <!-- Pencil light gray swatch -->
+  <rect x="700" y="185" width="160" height="95" fill="#C4C4C4"/>
+  <text x="720" y="205" class="label-role" fill="#444">DETALLE</text>
+  <text x="720" y="255" class="label-name" fill="#1A1A1A">Grafito</text>
+  <text x="720" y="273" class="label-hex"  fill="#1A1A1A">#C4C4C4</text>
+</svg>

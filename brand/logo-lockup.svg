@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" width="560" height="200">
+  <style>
+    .wordmark {
+      font-family: 'Clash Display', 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 92px;
+      letter-spacing: -0.025em;
+      fill: #1A1A1A;
+    }
+    .tagline {
+      font-family: 'Satoshi', 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.32em;
+      fill: #6B6B6B;
+    }
+    .dot { fill: #D4634A; }
+  </style>
+  <text x="30" y="100" class="wordmark">TRAMA</text>
+  <circle cx="450" cy="94" r="12" class="dot"/>
+  <line x1="30" y1="128" x2="530" y2="128" stroke="#D4634A" stroke-width="1.5"/>
+  <text x="30" y="158" class="tagline">ESTUDIO DE ARQUITECTURA</text>
+</svg>

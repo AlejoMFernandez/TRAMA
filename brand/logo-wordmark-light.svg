@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120">
+  <style>
+    .wordmark {
+      font-family: 'Clash Display', 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 88px;
+      letter-spacing: -0.025em;
+      fill: #F5F1EA;
+    }
+    .dot { fill: #D4634A; }
+  </style>
+  <text x="20" y="92" class="wordmark">TRAMA</text>
+  <circle cx="430" cy="86" r="11" class="dot"/>
+</svg>
